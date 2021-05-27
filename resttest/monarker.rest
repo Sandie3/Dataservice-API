@@ -1,0 +1,59 @@
+@port = 5056
+@route = monarker
+
+
+
+### GET ALLE
+
+GET http://localhost:{{port}}/{{route}}
+
+
+
+### GET UD FRA ID
+
+GET http://localhost:{{port}}/{{route}}/5f618392a6fc7c6660b020a3
+
+
+
+### GET SØGNING
+
+GET http://localhost:{{port}}/{{route}}/soeg/land
+
+
+
+// ADMIN ROUTES  -----------------------------------------------------------
+// *************************************************************************
+
+
+### DELETE
+
+DELETE http://localhost:{{port}}/{{route}}/admin/5f61eef18830058bdc598392
+
+
+
+### POST som formdata med image - kan testes med json og uden image
+
+POST http://localhost:{{port}}/{{route}}/admin
+content-type: application/json
+
+{
+     "navn" : "Kong Hans",
+     "land" : "Testmark",
+     "historie" : "En lang historie",
+     "foedt" : "1920-11-12",
+     "doed" : "2019-12-12"
+}
+
+
+### PUT
+
+PUT http://localhost:{{port}}/{{route}}/admin/5f84b0e499f8244d14043d80
+content-type: application/json
+
+{
+     "navn" : "Kong Hans 2",
+     "land" : "Landmark",
+     "historie" : "En lang historie",
+     "foedt" : "1920-11-12",
+     "doed" : "2019-12-12"
+}
